@@ -1,0 +1,17 @@
+replicaCount: 1
+
+resources:
+  limits:
+    cpu: 2
+    memory: 2G
+  requests:
+    cpu: 2
+    memory: 2G
+
+streaming:
+  javaProperties: >
+    -Dvoltsp.pipeline=SeleniumExerciseSessionWithGuvi.SeleniumExerciseSessionWithGuvi.KafkaToVoltPipeline 
+    -Dvoltdb.server=REPLACE-ME-IN-PIPELINE-YAML
+    -Dkafka.consumer.group=1  
+    -Dkafka.topic=greetings 
+    -Dkafka.bootstrap.servers=REPLACE-ME-IN-PIPELINE-YAML
